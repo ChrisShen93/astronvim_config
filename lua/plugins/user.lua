@@ -1,85 +1,86 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
 ---@type LazySpec
+
 return {
-
-  -- == Examples of Adding Plugins ==
-
-  "andweeb/presence.nvim",
-  {
-    "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require("lsp_signature").setup() end,
-  },
-
-  -- == Examples of Overriding Plugins ==
-
-  -- customize alpha options
   {
     "goolord/alpha-nvim",
     opts = function(_, opts)
       -- customize the dashboard header
-      opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
-      }
+      local logo = [[
+                   _oo0oo_
+                  o8888888o
+                  88" . "88
+                  (| -_- |)
+                  0\  =  /0
+                ___/`---'\___
+              .' \\|     |// '.
+             / \\|||  :  |||// \
+            / _||||| -:- |||||- \
+           |   | \\\  - /// |   |
+           | \_|  ''\---/''  |_/ |
+           \  .-\__  '-'  ___/-. /
+         ___'. .'  /--.--\  `. .'___
+      ."" '<  `.___\_<|>_/___.' >' "".
+     | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+     \  \ `_.   \_ __\ /__ _/   .-` /  /
+ =====`-.____`.___ \_____/___.-`___.-'=====
+                   `=---='
+
+
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    佛祖保佑       永不宕机     永无BUG
+      ]]
+
+      opts.section.header.val = vim.split(logo, "\n")
       return opts
     end,
   },
 
-  -- You can disable default plugins as follows:
-  { "max397574/better-escape.nvim", enabled = false },
-
-  -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
-    "L3MON4D3/LuaSnip",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.luasnip"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom luasnip configuration such as filetype extend or custom snippets
-      local luasnip = require "luasnip"
-      luasnip.filetype_extend("javascript", { "javascriptreact" })
-    end,
-  },
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "s1n7ax/nvim-window-picker",
+      config = function()
+        require("window-picker").setup {
+          autoselect_one = true,
+          include_current = false,
+          selection_chars = "ABCDEFGHIJKLMN",
+          filter_rules = {
+            -- filter using buffer options
+            bo = {
+              -- if the file type is one of following, the window will be ignored
+              filetype = { "neo-tree", "neo-tree-popup", "notify" },
 
-  {
-    "windwp/nvim-autopairs",
-    config = function(plugin, opts)
-      require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
-      -- add more custom autopairs configuration such as custom rules
-      local npairs = require "nvim-autopairs"
-      local Rule = require "nvim-autopairs.rule"
-      local cond = require "nvim-autopairs.conds"
-      npairs.add_rules(
-        {
-          Rule("$", "$", { "tex", "latex" })
-            -- don't add a pair if the next character is %
-            :with_pair(cond.not_after_regex "%%")
-            -- don't add a pair if  the previous character is xxx
-            :with_pair(
-              cond.not_before_regex("xxx", 3)
-            )
-            -- don't move right when repeat character
-            :with_move(cond.none())
-            -- don't delete if the next character is xx
-            :with_del(cond.not_after_regex "xx")
-            -- disable adding a newline when you press <cr>
-            :with_cr(cond.none()),
+              -- if the buffer type is one of following, the window will be ignored
+              buftype = { "terminal", "quickfix" },
+            },
+          },
+          -- other_win_hl_color = '#e35e4f',
+        }
+      end,
+    },
+    opts = {
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
         },
-        -- disable for .vim files, but it work for another filetypes
-        Rule("a", "a", "-vim")
-      )
-    end,
+      },
+      window = {
+        auto_expand_width = true,
+        mappings = {
+          ["o"] = "open_with_window_picker",
+          ["s"] = "split_with_window_picker",
+          ["S"] = "split_with_window_picker",
+          ["-"] = "split_with_window_picker",
+          ["|"] = "vsplit_with_window_picker",
+        },
+      },
+    },
   },
 }
