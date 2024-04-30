@@ -21,8 +21,8 @@ return {
   { import = "astrocommunity.pack.toml" },
 
   -- Enables either denols or tsserver based on the projec
-  -- { import = "astrocommunity.pack.typescript-all-in-one" },
-  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.typescript-all-in-one" },
+  -- { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.html-css" },
   -- lsp end
