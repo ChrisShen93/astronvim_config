@@ -28,7 +28,7 @@ return {
   -- lsp end
 
   -- editing enhance start
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   -- editing enhance end
 
   -- ui start
