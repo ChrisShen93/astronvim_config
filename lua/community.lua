@@ -25,6 +25,8 @@ return {
   -- { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.html-css" },
+
+  { import = "astrocommunity.lsp.lspsaga-nvim" },
   -- lsp end
 
   -- editing enhance start
