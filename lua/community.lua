@@ -36,6 +36,6 @@ return {
   -- ui start
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.utility.noice-nvim" },
-  { import = "astrocommunity.git.gitlinker-nvim" },
+  { import = "astrocommunity.git.git-blame-nvim" },
   -- ui end
 }
