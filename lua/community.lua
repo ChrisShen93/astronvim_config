@@ -26,7 +26,7 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.html-css" },
 
-  { import = "astrocommunity.lsp.lspsaga-nvim" },
+  -- { import = "astrocommunity.lsp.lspsaga-nvim" },
   -- lsp end
 
   -- editing enhance start
@@ -38,4 +38,7 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
   -- ui end
+
+  -- ai
+  -- { import = "astrocommunity.completion.avante-nvim" },
 }

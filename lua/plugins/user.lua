@@ -84,18 +84,18 @@ return {
     },
   },
 
-  {
-    "AstroNvim/astrolsp",
-    opts = function(_, opts)
-      local maps = opts.mappings
-      maps.n["grr"] = {
-        "<Cmd>Lspsaga finder<CR>",
-        desc = "Search references",
-        cond = function(client)
-          return client.supports_method "textDocument/references"
-            or client.supports_method "textDocument/implementation"
-        end,
-      }
-    end,
-  },
+  -- {
+  --   "AstroNvim/astrolsp",
+  --   opts = function(_, opts)
+  --     local maps = opts.mappings
+  --     maps.n["grr"] = {
+  --       "<Cmd>Lspsaga finder<CR>",
+  --       desc = "Search references",
+  --       cond = function(client)
+  --         return client.supports_method "textDocument/references"
+  --           or client.supports_method "textDocument/implementation"
+  --       end,
+  --     }
+  --   end,
+  -- },
 }
