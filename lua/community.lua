@@ -39,6 +39,8 @@ return {
   { import = "astrocommunity.git.git-blame-nvim" },
   -- ui end
 
+  { import = "astrocommunity.file-explorer.telescope-file-browser-nvim" },
+
   -- ai
   -- { import = "astrocommunity.completion.avante-nvim" },
 }
