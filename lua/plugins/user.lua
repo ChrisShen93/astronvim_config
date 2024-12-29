@@ -98,4 +98,20 @@ return {
       }
     end,
   },
+
+  {
+    "AstroNvim/astroui",
+    -- opts = {
+    --   -- change colorscheme
+    --   colorscheme = "catppuccin-frappe",
+    -- },
+    opts = function(_, opts)
+      opts.colorscheme = "catppuccin-frappe"
+
+      require("catppuccin").setup {
+        flavour = "frappe",
+        transparent_background = true,
+      }
+    end,
+  },
 }
