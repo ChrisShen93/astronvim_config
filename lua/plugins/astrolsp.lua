@@ -1,4 +1,9 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then
+  return {
+    "AstroNvim/astrolsp",
+    opts = function(_, opts) opts.config.vtsls.settings.vtsls.autoUseWorkspaceTsdk = true end,
+  }
+end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`

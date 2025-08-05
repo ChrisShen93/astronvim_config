@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -7,33 +5,71 @@ if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 ---@type LazySpec
 return {
-  "AstroNvim/astroui",
-  ---@type AstroUIOpts
-  opts = {
-    -- change colorscheme
-    colorscheme = "astrodark",
-    -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
-    highlights = {
-      init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
-      },
-      astrodark = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#000000" },
-      },
+  {
+    "AstroNvim/astroui",
+    -- opts = {
+    --   -- change colorscheme
+    --   colorscheme = "catppuccin-frappe",
+    -- },
+    opts = function(_, opts)
+      opts.colorscheme = "catppuccin-frappe"
+
+      require("catppuccin").setup {
+        flavour = "frappe",
+        transparent_background = true,
+        float = {
+          transparent = false, -- enable transparent floating windows
+          solid = false, -- use solid styling for floating windows, see |winborder|
+        },
+      }
+
+      -- require("notify").setup {
+      --   background_colour = "#000000",
+      --   merge_duplicates = true,
+      -- }
+    end,
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      "s1n7ax/nvim-window-picker",
+      config = function()
+        require("window-picker").setup {
+          autoselect_one = true,
+          include_current = false,
+          selection_chars = "ABCDEFGHIJKLMN",
+          filter_rules = {
+            -- filter using buffer options
+            bo = {
+              -- if the file type is one of following, the window will be ignored
+              filetype = { "neo-tree", "neo-tree-popup", "notify" },
+
+              -- if the buffer type is one of following, the window will be ignored
+              buftype = { "terminal", "quickfix" },
+            },
+          },
+          -- other_win_hl_color = '#e35e4f',
+        }
+      end,
     },
-    -- Icons can be configured throughout the interface
-    icons = {
-      -- configure the loading of the lsp in the status line
-      LSPLoading1 = "⠋",
-      LSPLoading2 = "⠙",
-      LSPLoading3 = "⠹",
-      LSPLoading4 = "⠸",
-      LSPLoading5 = "⠼",
-      LSPLoading6 = "⠴",
-      LSPLoading7 = "⠦",
-      LSPLoading8 = "⠧",
-      LSPLoading9 = "⠇",
-      LSPLoading10 = "⠏",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_gitignored = false,
+        },
+      },
+      window = {
+        auto_expand_width = true,
+        mappings = {
+          ["o"] = "open_with_window_picker",
+          ["s"] = "split_with_window_picker",
+          ["S"] = "split_with_window_picker",
+          ["-"] = "split_with_window_picker",
+          ["|"] = "vsplit_with_window_picker",
+        },
+      },
     },
   },
 }
