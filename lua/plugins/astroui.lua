@@ -66,7 +66,7 @@ return {
           ["o"] = "open_with_window_picker",
           ["s"] = "split_with_window_picker",
           ["S"] = "split_with_window_picker",
-          ["-"] = "split_with_window_picker",
+          ["\\"] = "split_with_window_picker",
           ["|"] = "vsplit_with_window_picker",
         },
       },
