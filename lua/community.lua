@@ -30,4 +30,6 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
 
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
+
+  { import = "astrocommunity.recipes.vscode" },
 }
