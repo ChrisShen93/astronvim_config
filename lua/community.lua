@@ -32,8 +32,6 @@ return {
 
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
 
-  { import = "astrocommunity.lsp.lspsaga-nvim" },
-
   { import = "astrocommunity.recipes.vscode" },
 
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
