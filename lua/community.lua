@@ -22,6 +22,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.python-ruff" },
 
   { import = "astrocommunity.git.git-blame-nvim" },
 
