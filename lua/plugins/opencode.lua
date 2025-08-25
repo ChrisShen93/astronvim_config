@@ -24,9 +24,11 @@ return {
     { "<leader>ot", function() require("opencode").toggle() end, desc = "Toggle embedded opencode" },
     { "<leader>on", function() require("opencode").command "session_new" end, desc = "New session" },
     { "<leader>oy", function() require("opencode").command "messages_copy" end, desc = "Copy last message" },
-    { "<S-C-u>", function() require("opencode").command "messages_half_page_up" end, desc = "Scroll messages up" },
+    -- { "<S-C-u>", function() require("opencode").command "messages_half_page_up" end, desc = "Scroll messages up" },
+    { "<leader>ou", function() require("opencode").command "messages_half_page_up" end, desc = "Scroll messages up" },
     {
-      "<S-C-d>",
+      -- "<S-C-d>",
+      "<leader>od",
       function() require("opencode").command "messages_half_page_down" end,
       desc = "Scroll messages down",
     },
