@@ -37,4 +37,6 @@ return {
   { import = "astrocommunity.recipes.vscode" },
 
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
+
+  { import = "astrocommunity.ai.opencode-nvim" },
 }
