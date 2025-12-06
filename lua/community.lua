@@ -15,7 +15,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.eslint" },
-  { import = "astrocommunity.pack.oxlint" },
   { import = "astrocommunity.pack.biome" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.html-css" },
@@ -26,9 +25,11 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.python-ruff" },
 
+  { import = "astrocommunity.pack.oxlint" },
   { import = "astrocommunity.git.git-blame-nvim" },
 
-  { import = "astrocommunity.project.project-nvim" },
+  -- { import = "astrocommunity.project.project-nvim" },
+  { import = "astrocommunity.project.neoconf-nvim" },
 
   { import = "astrocommunity.utility.noice-nvim" },
 
