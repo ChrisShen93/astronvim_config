@@ -24,12 +24,12 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.docker" },
 
   { import = "astrocommunity.pack.oxlint" },
   { import = "astrocommunity.git.git-blame-nvim" },
 
   -- { import = "astrocommunity.project.project-nvim" },
-  { import = "astrocommunity.project.neoconf-nvim" },
 
   { import = "astrocommunity.utility.noice-nvim" },
 
