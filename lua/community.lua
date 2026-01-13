@@ -27,9 +27,9 @@ return {
   { import = "astrocommunity.pack.docker" },
 
   { import = "astrocommunity.pack.oxlint" },
-  { import = "astrocommunity.git.git-blame-nvim" },
 
-  -- { import = "astrocommunity.project.project-nvim" },
+  { import = "astrocommunity.git.git-blame-nvim" },
+  { import = "astrocommunity.git.codediff-nvim" },
 
   { import = "astrocommunity.utility.noice-nvim" },
 
