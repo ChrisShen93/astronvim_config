@@ -25,6 +25,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.docker" },
+  { import = "astrocommunity.pack.sql" },
 
   { import = "astrocommunity.pack.oxlint" },
 
