@@ -33,6 +33,7 @@ return {
   { import = "astrocommunity.git.codediff-nvim" },
 
   { import = "astrocommunity.utility.noice-nvim" },
+  { import = "astrocommunity.utility.lua-json5" },
 
   { import = "astrocommunity.bars-and-lines.vim-illuminate" },
 
