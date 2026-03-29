@@ -26,6 +26,7 @@ return {
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.sql" },
+  { import = "astrocommunity.pack.zig" },
 
   { import = "astrocommunity.pack.oxlint" },
 
