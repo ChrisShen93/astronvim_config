@@ -23,7 +23,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.zig" },
@@ -35,8 +35,6 @@ return {
 
   { import = "astrocommunity.utility.noice-nvim" },
   { import = "astrocommunity.utility.lua-json5" },
-
-  { import = "astrocommunity.bars-and-lines.vim-illuminate" },
 
   { import = "astrocommunity.recipes.vscode" },
 
