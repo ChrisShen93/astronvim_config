@@ -40,7 +40,5 @@ return {
 
   { import = "astrocommunity.fuzzy-finder.snacks-picker" },
 
-  { import = "astrocommunity.ai.opencode-nvim" },
-
   { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 }
